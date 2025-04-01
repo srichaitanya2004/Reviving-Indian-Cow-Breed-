@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="predict-body">
+    <header class="header_predict">
+        <h1>Cow Health & Breeding</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="predict.html">Calculate Milk Yield </a>
+            <a href="breeds.html">Indian Breeds</a>
+            <a href="breed_prediction.html">AI Breed Prediction</a>
+            <a href="Found.html">Found</a>
+            <a href="Organic Products.html">Organic Products</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <section class="prediction-section">
+        <h2>Enter Cow Details</h2>
+        <label>Breed:</label>
+        <input type="text" id="breed"><br><br>
+    
+        <label>Age (Years):</label>
+        <input type="number" id="age"><br><br>
+    
+        <label>Weight (Kg):</label>
+        <input type="number" id="weight"><br><br>
+    
+        <button onclick="predict()">Get Prediction</button>
+    
+        <h3>Result:</h3>
+        <p id="result"></p>
+    </section>
+    <script>
+        function predict() {
+            let age = parseInt(document.getElementById("age").value);
+            let weight = parseInt(document.getElementById("weight").value);
+
+            let milkYield = (weight / 10) - (age * 0.5); 
+            let healthStatus = (weight > 200 && age < 10) ? "Healthy" : "Needs Attention";
+
+            document.getElementById("result").innerHTML = 
+                `Predicted Milk Yield: ${milkYield.toFixed(2)} Liters/day <br> 
+                Health Status: ${healthStatus}`;
+        }
+    </script>
+</body>
+</html>
