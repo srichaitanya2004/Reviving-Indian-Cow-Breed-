@@ -11,7 +11,7 @@ CORS(app)  # Enable CORS for all routes
 breed_names = ["Gir", "Hariana", "Kankrej", "Ongole", "Rathi", "Red Sindhi", "Sahiwal"]
 
 # Load the trained model from cow_breed_model folder
-model_path = "D:/Projects/cow_breed_model"
+model_path = "./cow_breed_model"
 model = AutoModelForImageClassification.from_pretrained(model_path)
 processor = AutoProcessor.from_pretrained(model_path)
 
