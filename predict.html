@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,7 +35,10 @@
     
         <h3>Result:</h3>
         <p id="result"></p>
+
+        <p class="note"><strong>Note:</strong> If the prediction is not working, please ensure that the AI model is running by executing <code>app.py</code> in the project folder.</p>
     </section>
+
     <script>
         function predict() {
             let age = parseInt(document.getElementById("age").value);
@@ -49,5 +52,14 @@
                 Health Status: ${healthStatus}`;
         }
     </script>
+
+    <style>
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+
 </body>
 </html>
